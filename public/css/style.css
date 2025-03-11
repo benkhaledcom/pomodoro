@@ -1,0 +1,98 @@
+/* Colors from: https://materialui.co/colors/ */
+@font-face {
+    font-family: "Segment";
+    src: url("/font/Digital7Mono.ttf") format("truetype");
+    font-display: swap;
+}
+
+* { padding: 0; margin: 0; box-sizing: border-box; }
+
+html, body {
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #BBDEFB;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+button {
+    border: none;
+    font-size: 1.2rem;
+    background-color: #1E88E5;
+    padding: 0.7rem 0.9rem;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: white;
+    transition: transform 0.2s;
+    transform: scale(1, 1);
+}
+
+button:hover {
+    background-color: #1976D2;
+    transform: scale(1, 1.1);
+}
+
+button:active {
+    transform: scale(1.1, 1);
+}
+
+.timer-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.timer-text-wrapper {
+    position: relative;
+    background-color: #455A64;
+    padding: 2rem 6rem;
+    color: #76FF03;
+    border-radius: 1rem;
+    font-family: "Segment";
+    border: 10px solid #37474F;
+}
+
+.timer-text-wrapper::after {
+    content: "";
+    position: absolute;
+    border: 10px solid #37474F;
+    border-radius: 0.5rem;
+    left: 50%;
+    bottom: 100%;
+    width: 50%;
+    transform: translate(-50%, 0);
+}
+
+.timer-txt {
+    position: relative;
+    font-weight: normal;
+    font-size: 6rem;
+    z-index: 1;
+}
+
+.timer-txt::before {
+    content: "00:00";
+    position: absolute;
+    color: #1B5E2099;
+    z-index: -1;
+    width: max-content;
+}
+
+.timer-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.timer-buttons.work #start-work-btn { background-color: #43A047; }
+.timer-buttons.work #start-work-btn:hover { background-color: #388E3C; }
+.timer-buttons.short #short-break-btn { background-color: #43A047; }
+.timer-buttons.short #short-break-btn:hover { background-color: #388E3C; }
+.timer-buttons.long #long-break-btn { background-color: #43A047; }
+.timer-buttons.long #long-break-btn:hover { background-color: #388E3C; }
